@@ -546,6 +546,117 @@ my_var += 1
 
 print(my_var) # 6
 
+===========================================================
+
+How Do Conditional Statements and Logical Operators Work? (Booleans and Conditionals)
+---------------------------------------------------------
+
+(==) for Equal
+(!=) for Not Equal
+(>)  for Greater than
+(<)  for Less than
+(>=) for Greater than or equal
+(<=) for Less than or equal
+
+-----------------------------------------------------------
+
+if / eif / else
+---------------
+
+if condition1:
+   pass # Code to execute if condition1 is True
+elif condition2:
+   pass # Code to execute if condition1 is False and condition2 is True
+else:
+   pass # Code to execute if all conditions are False
+
+
+Example Code
+
+age = 2
+
+if age >= 65:
+    print('You are a senior citizen')
+elif age >= 30:
+    print('You are an adult in your prime')
+elif age >= 18:
+    print('You are a young adult')
+elif age >= 13:
+    print('You are a teenager')
+elif age >= 3:
+    print('You are a young child')
+else:
+    print('You are a toddler or an infant') # You are a toddler or an infant
+
+===========================================================
+
+What Are Truthy and Falsy Values, and How Do Boolean Operators and Short-Circuiting Work? (Booleans and Conditionals)
+-------------------------------------------------------------------------------------------
+
+For Boolean
+-----------
+
+True Value - True, Integer (1), String ('something include')
+
+False Value - None, False, Integer (0), Float (0.0), String ('')
+
+
+Example Code
+
+print(bool(False)) # False
+print(bool(0))  # False
+print(bool('')) # False
+
+print(bool(True)) # True
+print(bool(1)) # True
+print(bool('Hello')) # True
+
+-----------------------------------------------------
+(and) operator 
+--------------
+
+if condition_1 and condition_2:
+   pass
+else:
+   pass
+
+-> need to correct both condition
+
+(or) operator
+--------------
+
+if condition_1 or condition_2:
+   pass
+else:
+   pass
+
+-> need to correct only one condition 
+
+
+(not) operator
+--------------
+
+Example Code
+
+print(not '')      # True, because empty string is falsy
+print(not 'Hello') # False, because non-empty string is truthy
+print(not 0)       # True, because 0 is falsy
+print(not 1)       # False, because 1 is truthy
+print(not False)   # True, because False is falsy
+print(not True)    # False, because True is truthy
+
+
+Example Code
+
+is_admin = False
+
+if not is_admin:
+    print('Access denied for non-administrators.') # Access denied for non-administrators.
+else:
+    print('Welcome, Administrator!')
+
+-> Since is_admin is False, then not is_admin is saying not False which is True. So the message Access denied for non-administrators. will be printed.
+
 }
 
 
