@@ -436,6 +436,118 @@ print(title_case_my_str)  # Hello World
 
 }
 
+{
+
+Date - 4/16/2026
+================
+
+How Do You Work With Integers and Floating Point Numbers? (Numbers and Mathematical Operations)
+---------------------------------------------------------
+
+(+)  for addition
+(-)  for subtraction
+(*)  for multiplication
+(/)  for division
+(%)  for remainder
+(//) for Floor Division !That output will be integer division
+(**) for power
+
+-> Floor Division Example -
+
+my_int_1 = 56
+my_int_2 = 12
+
+my_float_1 = 5.4
+my_float_2 = 12.0
+
+floor_div_ints = my_int_1 // my_int_2
+floor_div_floats = my_float_2 // my_float_1
+
+print('Integer Floor Division:', floor_div_ints) # Integer Floor Division: 4
+print('Float Floor Division:', floor_div_floats) # Float Floor Division: 2.0
+
+
+-> round(): Rounds a number to the specified number of decimal places. By default this function rounds to the nearest integer, and returns a whole number with no decimal places:
+
+my_int_1 = 4.798
+my_int_2 = 4.253
+
+rounded_int_1 = round(my_int_1)
+rounded_int_2 = round(my_int_2, 1)
+
+print(rounded_int_1) # 5
+print(rounded_int_2) # 4.3
+
+-> abs(): returns the absolute value of a number,
+
+num = -15
+
+absolute_value = abs(num)
+print(absolute_value) # 15
+
+-> pow(): raises a number to the power of another or performs modular exponentiation.
+
+result_1 = pow(2, 3)  # Equivalent to 2 ** 3
+print(result_1)  # 8
+
+result_2 = pow(2, 3, 5)  # (2 ** 3) % 5
+print(result_2)  # 3
+
+-----------------------------------------------------------------------
+
+How Do Augmented Assignments Work? (Numbers and Mathematical Operations)
+----------------------------------
+
+Main - 
+
+The basic syntax of an augmented assignment looks like this:
+
+variable <operator>= value
+
+Which is a more efficient way of doing this:
+
+variable = variable <operator> value
+
+---------------------------------
+
++= , -=, *=, /=, //=, %=, *rrinn*=
+
+---------------------------------
+
+-> You can use some augmented assignment operators with strings.
+
+Example Code
+
+greet = 'Hello'
+greet += ' World'
+
+print(greet) # Hello World
+
+--> And the multiplication assignment operator can be used to repeat a string
+
+greet = 'Hello'
+greet *= 3
+
+print(greet) # HelloHelloHello
+
+----------------------------------
+
+Increment and decrement operators (++ and --) -> They are not work in Python
+
+Example Code - 
+
+my_var = 5
+
+print(+my_var)   # 5
+print(++my_var)  # 5
+print(+++my_var) # 5
+
+my_var += 1
+
+print(my_var) # 6
+
+}
+
 
 
 
