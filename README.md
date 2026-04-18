@@ -438,7 +438,7 @@ print(title_case_my_str)  # Hello World
 
 {
 
-Date - 4/16/2026
+Date - 4/17/2026
 ================
 
 How Do You Work With Integers and Floating Point Numbers? (Numbers and Mathematical Operations)
@@ -660,5 +660,233 @@ else:
 }
 
 
+{
+
+Date - 4/18/2026
+================
+
+How Do Functions Work in Python? (Understanding Functions and Scope)
+--------------------------------
+
+input() Function
+----------------
+
+name = input('What is your name?') # User types "Kolade" and presses Enter  
+print('Hello', name) # Output: Hello Kolade
+
+----------------------------------------
+
+int() Function
+--------------
+
+print(int(3.14)) # 3
+print(int('42')) # 42
+print(int(True)) # 1
+print(int(False)) # 0 
+
+----------------------------------------
+
+def function
+------------
+
+-> You can also write your own custom functions.
+
+Format - def nameoffunction():
+             pass
+
+
+Example Code -
+
+def hello():
+    print('Hello World')
+
+To run the function, you need to call it with its name followed by a pair of parentheses:
+
+Example Code
+
+hello() # Hello World
+
+
+
+Another Example Code - 
+
+def calculate_sum(a,b):
+    print(a+b)
+
+-> You can see that our function, calculate_sum, has a and b in its parentheses, separated by a comma. Those are called parameters. Think of parameters as placeholder variables that act as "slots" for the values you pass into functions when you call them.
+
+-> To use the parameters, you have to pass in "arguments". Arguments are the values you pass to a function when you call it.
+
+Here's how to call the calculate_sum function to sum together the numbers 3 and 1:
+
+To run:
+
+calculate_sum(3,1) # 4
+
+------------------------------------
+
+-> Functions also use a special return keyword to exit the function and return a value. If you don't explicitly use return, Python will return None by default.
+
+
+Example Code
+
+def calculate_sum(a, b):
+    print(a + b)
+
+my_sum = calculate_sum(3, 1) # 4
+print(my_sum) # None
+
+
+-> You can see that the calculate_sum function prints the sum of a and b, but it doesn't return anything explicitly. So when we assign its result to my_sum, the value is actually None. To fix that, you can use the return keyword to send back the result:
+
+Example Code
+
+def calculate_sum(a, b):
+    return a + b
+
+my_sum = calculate_sum(3, 1)
+print(my_sum) # 4
+
+Now, calculate_sum returns the sum of a and b, which gets stored in my_sum.
+
+---------------------------------------
+
+What Is Scope in Python and How Does It Work? (Understanding Functions and Scope)
+---------------------------------------------
+
+There are 4 types of scope - LEGB 
+
+Local Scope
+Enclosing Scope
+Global Scope
+Built-in Scope
+
+-> Python uses the LEGB rule to resolve the scope of the variables in your program.
+
+------------------------------------
+
+Local Scope 
+-----------
+
+Local scope means that a variable declared inside a function or class can only be accessed within that function or class.
+
+Here's an example:
+
+def my_func():
+    my_var = 10
+    print(my_var)
+
+-> In this case, the my_func function has its own scope which cannot be accessed from outside the function. Calling my_func will output 10, but printing my_var outside the function will lead to a NameError:
+
+def my_func():
+    my_var = 10 # Locally scoped to my_func
+    print(my_var)
+
+my_func() # 10
+
+print(my_var) # NameError: name 'my_var' is not defined
+
+------------------------------------
+
+Enclosing Scope
+---------------
+
+Enclosing scope means that a function that's nested inside another function can access the variables of the function it's nested within.
+
+For example:
+
+def outer_func():
+    msg = 'Hello there!'
+    def inner_func():
+        print(msg)
+    inner_func()
+
+outer_func() # Hello there!
+
+-> In this example, the inner function, inner_func, can freely access the msg variable defined in the outer function, outer_func. However, note that outer functions cannot access variables defined within any nested functions:
+
+def outer_func():
+    msg = 'Hello there!'
+    print(res)
+    def inner_func():
+        res = 'How are you?'
+        print(msg)
+    inner_func()
+
+outer_func() # NameError: name 'res' is not defined
+
+-> That's because res is locally scoped to inner_func. Also, notice that outer_func tries to print res before inner_func is called.
+
+-> One solution is to initialize res as an empty string in the enclosing scope, which is within outer_func. Then within inner_func, make res a non-local variable with the nonlocal keyword:
+
+def outer_func():
+    msg = 'Hello there!'
+    res = ""  # Declare res in the enclosing scope
+    def inner_func():
+        nonlocal res  # Allow modification of an enclosing variable
+        res = 'How are you?'
+        print(msg)  # Accessing msg from outer_func()
+    inner_func()
+    print(res)  # Now res is accessible and modified
+
+outer_func()
+
+# Output:
+# Hello there!
+# How are you?
+
+
+------------------------------------
+
+Global Scope
+------------
+
+Global scope refers to variables that are declared outside any functions or classes which can be accessed from anywhere in the program. Here, my_var can be accessed anywhere, even inside a function it's not defined in:
+
+my_var = 100
+
+def show_var():
+    print(my_var)
+
+show_var() # 100
+print(my_var) # 100
+
+-> And if you want to make a locally scoped variable defined inside a function globally accessible, you can use the global keyword:
+
+my_var_1 = 7
+
+def show_vars():
+    global my_var_2
+    my_var_2 = 10
+    print(my_var_1)
+    print(my_var_2)
+
+show_vars() # 7 10
+
+# my_var_2 is now a global variable and can be accessed anywhere in the program
+print(my_var_2) # 10
+
+-> You can also use the global keyword to modify a global variable:
+
+my_var = 10  # A global variable
+
+def change_var():
+    global my_var  # Allows modification of a global variable
+    my_var = 20
+
+change_var()
+
+print(my_var)  # my_var is now modified globally to 20
+
+------------------------------------
+
+Build-in Scope
+--------------
+
+print(str(45)) # '45'
+print(type(3.14)) # <class 'float'>
+print(isinstance(3, str)) # False
+
+}
 
 
