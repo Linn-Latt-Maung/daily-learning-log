@@ -890,3 +890,284 @@ print(isinstance(3, str)) # False
 }
 
 
+{
+
+Date - 4/19/2026
+================
+
+What are Lists and How Do They Work? (Working with Loops and Sequences)
+------------------------------------
+
+Core Concepts
+
+Definition: An ordered, mutable sequence that can contain mixed data types.
+
+-> Creation: Use square brackets or the list() constructor.
+
+Example Code
+
+cities = ['Los Angeles', 'London', 'Tokyo']
+letters = list('abc') # ['a', 'b', 'c']
+
+-> Length: Use len() to find the total number of items.
+
+Example Code
+
+len(cities) # Returns 3
+
+Accessing & Slicing (Zero-based Indexing)
+-----------------------------------------
+
+-> Positive Indexing: Grabs items from the start (first item is 0).
+
+Example Code
+
+cities[0] # 'Los Angeles'
+
+
+-> Negative Indexing: Grabs items from the end (last item is -1).
+
+Example Code
+
+cities[-1] # 'Tokyo'
+
+-> Nested Lists: Access items using multiple brackets.
+
+Example Code
+
+developer = ['Alice', 25, ['Python', 'Rust', 'C++']]
+developer[2][1] # 'Rust' (Index 2 is the sub-list, index 1 is 'Rust')
+
+-> Slicing ([start:stop:step]): Extracts a portion (the stop index is not included).
+
+Example Code
+
+numbers = [1, 2, 3, 4, 5, 6]
+numbers[1:4]  # [2, 3, 4]
+numbers[1::2] # [2, 4, 6] (Starts at index 1, skips every other item)
+
+Modifying Lists
+---------------
+
+-> Update: Assign a new value directly to an index.
+
+Example Code
+
+langs = ['Python', 'Java', 'C++']
+langs[0] = 'JavaScript'  # ['JavaScript', 'Java', 'C++']
+
+-> Delete: Use the del keyword.
+
+Example Code
+
+del langs[1]  # ['JavaScript', 'C++']
+
+Useful Operators
+----------------
+
+-> in keyword: Checks if an item exists in the list.
+
+Example Code
+
+programming_languages = ['Python', 'Java', 'C++', 'Rust']
+
+'Rust' in programming_languages # True
+'JavaScript' in programming_languages # False
+
+Sometimes it is common to have lists nested inside of other lists like this:
+
+Example Code
+
+developer = ['Alice', 25, ['Python', 'Rust', 'C++']]
+
+In this example, we have one nested list containing three popular programming languages. To access the nested list, you will need to access it using index 2 since lists are zero based indexed:
+
+Example Code
+
+developer = ['Alice', 25, ['Python', 'Rust', 'C++']]
+developer[2] # ['Python', 'Rust', 'C++']
+
+Then to access the second language from that nested list, you will need to access it using index 1 like this:
+
+Example Code
+
+developer = ['Alice', 25, ['Python', 'Rust', 'C++']]
+developer[2][1] # 'Rust'
+
+-> Unpacking: Assigns list items directly to individual variables.
+
+Example Code
+
+developer = ['Alice', 34, 'Rust Developer']
+name, age, job = developer
+
+print(name) # 'Alice'
+print(age) # 34
+print(job) # 'Rust Developer'
+
+-> Asterisk (*) Operator: If you need to collect any remaining elements from a list, you can use the asterisk (*) operator like this:
+
+Example Code
+
+developer = ['Alice', 34, 'Rust Developer']
+name, *rest = developer
+
+print(name) # 'Alice'
+print(rest) # [34, 'Rust Developer']
+
+-> The last concept we will look at is the slice operator (:). Similar to strings, you can access portions of a list by using the slice operator like this:
+
+Example Code
+
+desserts = ['Cake', 'Cookies', 'Ice Cream', 'Pie', 'Brownies']
+desserts[1:4] # ['Cookies', 'Ice Cream', 'Pie']
+
+-> If you wanted to extract a list of just even numbers, you can use the slicing operator like this:
+
+Example Code
+
+numbers = [1, 2, 3, 4, 5, 6]
+numbers[1::2] # [2, 4, 6]
+
+--------------------------------------------------
+
+What are Lists and How Do They Work? (Working with Loops and Sequences)
+------------------------------------
+
+append() method
+---------------
+
+Example Code
+
+numbers = [1, 2, 3, 4, 5]
+numbers.append(6)
+print(numbers) # [1, 2, 3, 4, 5, 6]
+
+Example Code
+
+numbers = [1, 2, 3, 4, 5]
+even_numbers = [6, 8, 10]
+
+numbers.append(even_numbers)
+print(numbers) # [1, 2, 3, 4, 5, [6, 8, 10]]
+
+-------------------------
+extend() method
+---------------
+
+Example Code
+
+numbers = [1, 2, 3, 4, 5]
+even_numbers = [6, 8, 10]
+
+numbers.extend(even_numbers)
+print(numbers) # [1, 2, 3, 4, 5, 6, 8, 10]
+
+-------------------------
+insert() method
+---------------
+
+Example Code
+
+numbers = [1, 2, 3, 4, 5]
+numbers.insert(2, 2.5)
+
+print(numbers) # [1, 2, 2.5, 3, 4, 5]
+
+-------------------------
+remove() method
+---------------
+
+Example Code
+
+numbers = [10, 20, 30, 40, 50, 50]
+numbers.remove(50)
+
+print(numbers) # [10, 20, 30, 40, 50]
+
+-> It is important to note that this method will only remove the first occurrence of an item. Not all of them:
+
+Example Code
+
+numbers = [10, 20, 30, 40, 50, 50, 50]
+numbers.remove(50)
+
+print(numbers) # [10, 20, 30, 40, 50, 50]
+
+-------------------------
+pop() method
+------------
+
+To remove an element at a specific index in the list, you can use the pop() method like this:
+
+Example Code
+
+numbers = [1, 2, 3, 4, 5]
+numbers.pop(1) # The number 2 is returned
+
+-> If you don't specify an element for the pop method, then the last element is removed.
+
+Example Code
+
+numbers = [1, 2, 3, 4, 5]
+numbers.pop() # The number 5 is returned
+
+-------------------------
+clear() method
+--------------
+
+Example Code
+
+numbers = [1, 2, 3, 4, 5]
+numbers.clear()
+
+print(numbers) # []
+
+-------------------------
+sort() method
+--------------
+
+Example Code
+
+numbers = [19, 2, 35, 1, 67, 41]
+numbers.sort()
+
+print(numbers) # [1, 2, 19, 35, 41, 67]
+
+-> In contrast to the sort() method, there is the sorted() function which works for any iterable and returns a new sorted list instead of modifying the original list. 
+
+Example Code
+
+numbers = [19, 2, 35, 1, 67, 41]
+sorted_numbers = sorted(numbers)
+
+print(numbers) # [19, 2, 35, 1, 67, 41]
+print(sorted_numbers) # [1, 2, 19, 35, 41, 67]
+
+-------------------------
+reverse() method
+----------------
+
+Example Code
+
+numbers = [6, 5, 4, 3, 2, 1]
+numbers.reverse()
+
+print(numbers) # [1, 2, 3, 4, 5, 6]
+
+-------------------------
+index() method
+---------------
+
+Example Code
+
+programming_languages = ['Rust', 'Java', 'Python', 'C++']
+programming_languages.index('Java') # 1
+
+-> If you put wrong or not exist element, will show ValueError
+
+========================================================
+
+
+
+}
