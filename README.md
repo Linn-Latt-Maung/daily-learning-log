@@ -1779,9 +1779,62 @@ numbers = [5, 10, 15, 20]
 total = sum(numbers, start=10) # keyword argument
 print(total) # 60
 
+------------------------------------------------
+
+What Are Lambda Functions and How Do They Work? (Working with Loops and Sequences)
+-----------------------------------------------
+
+When working with high order functions like map() and filter(), you can use an anonymous inline function. This is where lambda functions come in.
+
+-> Here's what the square() function looks like when refactored into a lambda function:
+
+lamda num: num ** 2
+
+Using with filter()
+-------------------
+
+numbers = [1, 2, 3, 4, 5]
+
+even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
+print(even_numbers)  # [2, 4]
+
+Using with map()
+----------------
+
+--> When working with lambda functions it is important to be aware of best practices. For example, it is not a good practice to assign a lambda function to a variable like this:
+
+numbers = [1, 2, 3, 4, 5]
+
+square = lambda x: x ** 2
+squared_numbers = list(map(square, numbers))
+print(squared_numbers) # [1, 4, 9, 16, 25]
+
+--> This defeats the purpose of using anonymous functions. In this case, you should use a regular function, like this:
+
+numbers = [1, 2, 3, 4, 5]
+
+def square(num):
+    return num ** 2
+
+squared_numbers = list(map(square, numbers))
+print(squared_numbers) # [1, 4, 9, 16, 25]
 
 
 
+!!!Need to advoid like this using function!!!
+
+result = (lambda x: (x**2 + 2*x - 1) if x > 0 else (x**3 - x + 4))(3)
+print(result)  # 14
+
+--> Using above instead, please use clear code and understandable 
+
+def calculate_expression(x):
+    if x > 0:
+        return x**2 + 2*x - 1
+    else:
+        return x**3 - x + 4
+
+print(calculate_expression(3))  # 14
 
 
 }
