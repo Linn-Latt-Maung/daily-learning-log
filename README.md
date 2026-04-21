@@ -1609,8 +1609,143 @@ ID: 4
 
 ------------------------------------------------
 
+What Are the Enumerate and Zip Functions and How Do They Work? (Working with Loops and Sequences)
+--------------------------------------------------------------
+
+In previous lessons you learned how to work with the for loop, which is used to repeat a block of code a set number of times.  if you wanted to keep track of the index for each element? Well, one option is to create an index variable and increment it by 1 for each iteration of the loop. For Example -
+
+
+languages = ['Spanish', 'English', 'Russian', 'Chinese']
+
+index = 0
+
+for language in languages:
+    print(f'Index {index} and language {language}')
+    index += 1
+
+
+emumerate() function
+--------------------
+
+Example Code 
+
+languages = ['Spanish', 'English', 'Russian', 'Chinese']
+
+list(enumerate(languages))
+# [(0, 'Spanish'), (1, 'English'), (2, 'Russian'), (3, 'Chinese')]
+
+--> so with above for example -
+
+languages = ['Spanish', 'English', 'Russian', 'Chinese']
+
+for index, language in enumerate(languages):
+    print(f'Index {index} and language {language}')
+
+#
+Index 0 and language Spanish
+Index 1 and language English
+Index 2 and language Russian
+Index 3 and language Chinese
+
+If we want to start at 1 not 0 -
+
+languages = ['Spanish', 'English', 'Russian', 'Chinese']
+
+for index, language in enumerate(languages, 1):
+    print(f'Index {index} and language {language}')
+
+#
+Index 1 and language Spanish
+Index 2 and language English
+Index 3 and language Russian
+Index 4 and language Chinese
+
+----------------------
+
+zip() function
+--------------
+
+Example Code
+
+developers = ['Naomi', 'Dario', 'Jessica', 'Tom']
+ids = [1, 2, 3, 4]
+
+list(zip(developers, ids))
+# [('Naomi', 1), ('Dario', 2), ('Jessica', 3), ('Tom', 4)]
+
+--> Example with for looping 
+
+developers = ['Naomi', 'Dario', 'Jessica', 'Tom']
+ids = [1, 2, 3, 4]
+
+for name, id in zip(developers, ids):
+    print(f'Name: {name}')
+    print(f'ID: {id}')
+
+#
+Name: Naomi
+ID: 1
+Name: Dario
+ID: 2
+Name: Jessica
+ID: 3
+Name: Tom
+ID: 4
+
+------------------------------------------------
+
 What Are List Comprehensions and What Are Some Useful Functions to Work With Lists? (Working with Loops and Sequences)
 -----------------------------------------------------------------------------------
+
+Example Code -
+
+even_numbers = []
+
+for num in range(21):
+    if num % 2 == 0:
+        even_numbers.append(num)
+
+print(even_numbers)
+
+--> This example creates a new empty list called even_numbers and loops through a sequence of numbers between 0 and 20. Inside the loop, there's a condition that checks if the current number has a remainder of 0 when divided by 2. This is used to determine if the number is even. If the condition is True, then the current num is appended at the end of the even_numbers list. Finally, we print the even_numbers list to the console.
+
+--> While this code works, there is a more concise way to write this that uses list comprehension instead. List comprehension allows you to create a new list in a single line by combining a loop and condition directly within square brackets. This makes the code shorter and often easier to read.
+
+Example Code -
+
+even_numbers = [num for num in range(21) if num % 2 == 0]
+print (even_numbers)
+
+-> For more understanding 
+
+Example Code -
+
+numbers = [1,2,3,4,5]
+result = [(num, 'Even') if num % 2 == 0 else (num, 'Odd') for num in numbers]
+
+# [(1, 'Odd'), (2, 'Even'), (3, 'Odd'), (4, 'Even'), (5, 'Odd')]
+
+-----------------------------
+filter() function
+-----------------
+
+Example Code -
+
+words = ['tree', 'sky', 'mountain', 'river', 'cloud', 'sun']
+
+def is_long_word(word):
+    return len(word) > 4
+
+long_words = list(filter(is_long_word, words))
+print(long_words) # ['mountain', 'river', 'cloud']
+
+--> The filter() function is used to select elements from an iterable that meet a specific condition. The filter() function accepts a function and an iterable for its arguments. In this example, we are passing in an is_long_word function into the filter() function to check if the current word count is greater than 4. All words that have a character count greater than 4 are added into a new list and assigned to the long_words variable.
+
+-----------------------------
+map() function
+--------------
+
+
 
 
 
