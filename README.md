@@ -1461,6 +1461,159 @@ for word in words:
 {
 
 
+Date - 4/21/2026
+================
+
+What Are Ranges and How Can You Use Them in a Loop? (Working with Loops and Sequences)
+---------------------------------------------------
+
+range() function
+----------------
+
+The range() function is used to generate a sequence of integers.
+
+range(start, stop, step)
+
+Example Code - 1
+ 
+for num in range(3):
+    print(num)
+
+#0,1,2
+
+
+Example Code - 2
+
+for num in range(1, 5):
+    print(num)
+
+#1,2,3,4
+
+Example Code - 3
+
+for num in range(2, 11, 2):
+    print(num)
+
+#2,4,6,8,10
+
+Example Code - 4
+
+for num in range():
+    print(num)
+
+-- result will show error with TypeError: range expected at least 1 argument, got 0
+
+Example Code - 5
+
+for num in range(3.4):
+    print(num)
+
+-- result will show error with TypeError: 'float' object cannot be interpreted as an integer
+
+Example Code - 5
+
+for num in range(40, 0, -10):
+    print(num)
+
+#40,30,20,10
+
+Example Code - 6
+
+numbers = list(range(2, 11, 2))
+print(numbers) # [2, 4, 6, 8, 10]
+
+----------------------------------------------------------------
+
+What Are the Enumerate and Zip Functions and How Do They Work? (Working with Loops and Sequences)
+--------------------------------------------------------------
+
+In previous lessons you learned how to work with the for loop, which is used to repeat a block of code a set number of times.  if you wanted to keep track of the index for each element? Well, one option is to create an index variable and increment it by 1 for each iteration of the loop. For Example -
+
+
+languages = ['Spanish', 'English', 'Russian', 'Chinese']
+
+index = 0
+
+for language in languages:
+    print(f'Index {index} and language {language}')
+    index += 1
+
+
+emumerate() function
+--------------------
+
+Example Code 
+
+languages = ['Spanish', 'English', 'Russian', 'Chinese']
+
+list(enumerate(languages))
+# [(0, 'Spanish'), (1, 'English'), (2, 'Russian'), (3, 'Chinese')]
+
+--> so with above for example -
+
+languages = ['Spanish', 'English', 'Russian', 'Chinese']
+
+for index, language in enumerate(languages):
+    print(f'Index {index} and language {language}')
+
+#
+Index 0 and language Spanish
+Index 1 and language English
+Index 2 and language Russian
+Index 3 and language Chinese
+
+If we want to start at 1 not 0 -
+
+languages = ['Spanish', 'English', 'Russian', 'Chinese']
+
+for index, language in enumerate(languages, 1):
+    print(f'Index {index} and language {language}')
+
+#
+Index 1 and language Spanish
+Index 2 and language English
+Index 3 and language Russian
+Index 4 and language Chinese
+
+----------------------
+
+zip() function
+--------------
+
+Example Code
+
+developers = ['Naomi', 'Dario', 'Jessica', 'Tom']
+ids = [1, 2, 3, 4]
+
+list(zip(developers, ids))
+# [('Naomi', 1), ('Dario', 2), ('Jessica', 3), ('Tom', 4)]
+
+--> Example with for looping 
+
+developers = ['Naomi', 'Dario', 'Jessica', 'Tom']
+ids = [1, 2, 3, 4]
+
+for name, id in zip(developers, ids):
+    print(f'Name: {name}')
+    print(f'ID: {id}')
+
+#
+Name: Naomi
+ID: 1
+Name: Dario
+ID: 2
+Name: Jessica
+ID: 3
+Name: Tom
+ID: 4
+
+------------------------------------------------
+
+What Are List Comprehensions and What Are Some Useful Functions to Work With Lists? (Working with Loops and Sequences)
+-----------------------------------------------------------------------------------
+
+
+
 }
 
 
