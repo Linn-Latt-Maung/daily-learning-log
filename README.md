@@ -1745,6 +1745,41 @@ print(long_words) # ['mountain', 'river', 'cloud']
 map() function
 --------------
 
+Aside from the filter() function, there are a few more functions that are helpful when working with lists. Another function to be aware of is the map() function, which takes an iterable and applies a function to each of its elements. Here is an example of using the map() function to convert a list of temperatures from Celsius to Fahrenheit:
+
+celsius = [0, 10, 20, 30, 40]
+
+def to_fahrenheit(temp):
+    return (temp * 9/5) + 32
+
+fahrenheit = list(map(to_fahrenheit, celsius))
+print(fahrenheit) # [32.0, 50.0, 68.0, 86.0, 104.0]
+
+Another Example Code - 
+
+# Convert a list of strings to integers
+str_nums = ["1", "2", "3"]
+int_nums = list(map(int, str_nums)) 
+# Output: [1, 2, 3]
+
+-----------------------------
+positional argument
+-------------------
+
+numbers = [5, 10, 15, 20]
+total = sum(numbers, 10) # positional argument
+print(total) # 60
+
+
+-----------------------------
+keyword argument
+----------------
+
+numbers = [5, 10, 15, 20]
+total = sum(numbers, start=10) # keyword argument
+print(total) # 60
+
+
 
 
 
