@@ -1847,6 +1847,60 @@ Date - 4/23/2026
 
 -> I do extra project for today (Python Banking System)
 
+Project: The Python Banking System
+The Setup:
+You will use a single nested list to represent your bank's database. Every time a new account is created, it gets added to this list.
+Example: bank_db = [['Alex', 150.0], ['Jessica', 500.0]]
+
+Here are your User Stories. You will need to write five different functions to make this work.
+
+1. The Helper Function
+Define a function named find_account_index(db, name).
+
+It should use a for loop (and the enumerate() function you learned earlier) to search through the db list.
+
+If it finds a nested list where the first item matches name, it should return that index number.
+
+If the loop finishes and it never found the name, return -1. (You will use this helper function inside almost all your other functions so you don't have to rewrite your search loops!)
+
+2. Creating Accounts
+Define create_account(db, name, initial_deposit).
+
+Validation: * If name is not a string, return 'Error: Name must be a string.'
+
+If initial_deposit is less than 0, return 'Error: Deposit cannot be negative.'
+
+Use your find_account_index function. If the account already exists (meaning it didn't return -1), return 'Error: Account already exists.'
+
+Action: If all checks pass, append a new list containing the [name, initial_deposit] into the db. Return 'Success: Account created.'
+
+3. Making Deposits
+Define deposit(db, name, amount).
+
+Validation: If the amount is less than or equal to 0, return an error. If the account does not exist, return an error.
+
+Action: If valid, access the user's nested list using the index, add the amount to their balance, and return the new balance as a formatted string: 'Success: New balance is $X'.
+
+4. Processing Transfers
+Define transfer(db, sender_name, receiver_name, amount).
+
+Validation: Check if BOTH accounts exist. Check if the amount is greater than 0.
+
+Check if the sender actually has enough money in their balance to make the transfer. If they don't, return 'Error: Insufficient funds.'
+
+Action: Deduct the money from the sender's balance, add it to the receiver's balance, and return 'Success: Transfer complete.'
+
+5. Generating the Bank Report
+Define print_bank_report(db).
+
+Create a variable called total_bank_money set to 0.
+
+Write a loop that goes through every account in the db.
+
+Add each account's balance to the total_bank_money.
+
+Format a massive multi-line string (using \n) that acts as a ledger, printing out every user, their balance, and the total money held by the bank at the bottom.
+
 }
 {}
 {}
