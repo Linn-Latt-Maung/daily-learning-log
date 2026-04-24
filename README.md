@@ -1902,7 +1902,18 @@ Add each account's balance to the total_bank_money.
 Format a massive multi-line string (using \n) that acts as a ledger, printing out every user, their balance, and the total money held by the bank at the bottom.
 
 }
-{}
+
+
+
+{
+
+Date - 4/24/2026
+================
+
+-> I do extra project for today (Tech_Shop_inventory_System, Book Shop Inventory System, and Interactive Library System)
+
+
+}
 {}
 {}
 {}
