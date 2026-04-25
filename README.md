@@ -2195,7 +2195,7 @@ for index, product in enumerate(products.items()):
 2 ('Tablet', 250)
 3 ('Headphones', 70)
 
-To customize the initial value of the count, you can pass a second argument to enumerate(). For example, here we are starting the count from 1:
+-> To customize the initial value of the count, you can pass a second argument to enumerate(). For example, here we are starting the count from 1:
 
 for index, product in enumerate(products.items(), 1):
     print(index, product)
@@ -2204,6 +2204,7 @@ for index, product in enumerate(products.items(), 1):
 2 ('Smartphone', 600)
 3 ('Tablet', 250)
 4 ('Headphones', 70)
+
 
 
 
