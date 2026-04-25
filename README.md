@@ -1914,7 +1914,142 @@ Date - 4/24/2026
 
 
 }
-{}
+
+
+{
+
+Date - 4/25/2026
+================
+
+
+What are Dictionaries, and How Do They Work? (Working with Dictionaries and Sets)
+--------------------------------------------
+
+
+In python, Dictionaries are build in data structures that store collections of key-value pairs.
+
+They work very similarly to real dictionaries, where you search for a word to find its corresponding  meaning.
+
+Syntax of a Python Dictionary - 
+
+dictionary = {
+    key1: value1,
+    key2: value2
+}
+
+
+Example Code -
+
+pizza = {
+    'name': 'Margherita Pizza',
+    'price': 8.9,
+    'calories_per_slice': 250,
+    'toppings': ['mozzarella', 'basil']
+}
+
+--> The dictionary is assigned to the pizza variable. It has four key-value pairs: name, price, calories_per_slice, and toppings.
+
+
+---------------------------------------------
+dict()
+------
+
+With above pizza example - 
+
+pizza = dict([('name', 'Margherita Pizza'), ('price', 8.9), ('calories_per_slice', 250), ('toppings', ['mozzarella', 'basil'])])
+
+We can output with - dictionary[key]
+
+Example - 
+
+pizza['name']   #'Margherita Pizza'
+
+To update -
+
+pizza['name'] = 'Margherita'
+
+so 
+
+print(pizza['name']) # 'Margherita
+
+------------------------------------------
+
+.get()
+------
+
+dictionary.get(key, default)
+
+Example code -
+
+pizza.get('toppings', []) # ['mozzarella', 'basil']
+
+------------------------------------------
+
+.key() and .values()
+--------------------
+
+Example code -
+
+pizza.keys()
+# dict_keys(['name', 'price', 'calories_per_slice'])
+
+pizza.values()
+# dict_values(['Margherita Pizza', 8.9, 250])
+
+------------------------------------------
+
+.items()
+--------
+
+Example code -
+
+pizza.items()
+# dict_items([('name', 'Margherita Pizza'), ('price', 8.9), ('calories_per_slice', 250)])
+
+------------------------------------------
+
+.clear()
+--------
+
+Example code -
+
+pizza.clear()
+
+-----------------------------------------
+
+.pop()
+------
+
+Example code -
+
+pizza.pop('price', 10)
+pizza.pop('total_price') # KeyError
+
+------------------------------------------
+
+.update()
+---------
+
+Example code -
+
+pizza.update({ 'price': 15, 'total_time': 25 })
+
+
+This is the new dictionary with the updated price and the new total_time. Notice how the price is now 15 and total_time is a new key-value pair:
+
+{
+    'name': 'Margherita Pizza', 
+    'price': 15, 
+    'calories_per_slice': 250, 
+    'toppings': ['mozzarella', 'basil'], 
+    'total_time': 25
+}
+
+
+
+
+
+}
 {}
 {}
 
