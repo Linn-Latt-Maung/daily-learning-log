@@ -2046,6 +2046,165 @@ This is the new dictionary with the updated price and the new total_time. Notice
 }
 
 
+---------------------------------------------------------------------
+
+What Are Some Common Techniques to Loop Over a Dictionary? (Working with Dictionaries and Sets)
+----------------------------------------------------------
+
+You can loop over a dictionary if you need to access and process its key-value pairs. This is helpful for updating their values or applying some logic to them.
+
+If we have this product dictionary -
+
+products = {
+    'Laptop': 990,
+    'Smartphone': 600,
+    'Tablet': 250,
+    'Headphones': 70,
+}
+
+------------------------------------
+
+.values(), .keys(), .items()
+----------------------------
+
+for .values() -
+    ---------
+
+for price in products.values():
+    print(price)
+
+#990
+ 600
+ 250
+ 70
+
+-------------------
+
+for .keys() -
+    --------
+
+for product in products.keys():
+    print(product)
+
+//Or
+
+for product in products:
+    print(product)
+
+#Laptop
+ Smartphone
+ Tablet
+ Headphones
+
+--------------------
+
+for .items() -
+    --------
+
+for product in products.items():
+    print(product)
+
+#('Laptop', 990)
+('Smartphone', 600)
+('Tablet', 250)
+('Headphones', 70)
+
+
+Other Example - 
+
+for product, price in products.items():
+    print(product, price)
+
+#Laptop 990
+Smartphone 600
+Tablet 250
+Headphones 70
+
+--------------------
+
+Now that you know more about this, we can go back to our initial example. If we want to offer a 20% discount, we would multiply each price by 0.8 and reassign it as the value of that product key.
+
+We could also round the result down if we want to work with integers:
+
+Example Code -
+
+products = {
+    'Laptop': 990,
+    'Smartphone': 600,
+    'Tablet': 250,
+    'Headphones': 70,
+}
+
+for product, price in products.items():
+    products[product] = round(price * 0.8)
+
+print(products)
+
+#{
+    'Laptop': 792, 
+    'Smartphone': 480, 
+    'Tablet': 200, 
+    'Headphones': 56
+}
+
+----------------------
+
+Using with enumerate()
+
+for product in enumerate(products):
+    print(product)
+
+(0, 'Laptop')
+(1, 'Smartphone')
+(2, 'Tablet')
+(3, 'Headphones')
+
+
+--> If you need to, you can assign these values to separate loop variables. Here, we have two loop variables (index and product). This is what you will commonly see and use when you work with enumerate():
+
+
+for index, product in enumerate(products):
+    print(index, product)
+
+------------
+
+for price in enumerate(products.values()):
+    print(price)
+
+#(0, 990)
+(1, 600)
+(2, 250)
+(3, 70)
+
+
+for index, price in enumerate(products.values()):
+    print(index, price)
+
+# 0 990
+1 600
+2 250
+3 70
+
+-------------
+
+for index, product in enumerate(products.items()):
+    print(index, product)
+
+# 0 ('Laptop', 990)
+1 ('Smartphone', 600)
+2 ('Tablet', 250)
+3 ('Headphones', 70)
+
+To customize the initial value of the count, you can pass a second argument to enumerate(). For example, here we are starting the count from 1:
+
+for index, product in enumerate(products.items(), 1):
+    print(index, product)
+
+# 1 ('Laptop', 990)
+2 ('Smartphone', 600)
+3 ('Tablet', 250)
+4 ('Headphones', 70)
+
 
 
 
