@@ -3455,7 +3455,56 @@ Date - 4/20/2026
 
 
 
-{}
+{
+
+Date - 4/22/2026
+================
+
+What is inheritance and How Does It Promote code Reuse? (Understanding Inheritance and Polymorphism)
+-------------------------------------------------------
+
+1. Core Definitions
+-------------------
+•	Inheritance: A mechanism in OOP that allows a Child Class to adopt all the attributes and methods of a Parent Class, eliminating redundant code.
+•	Parent Class (Base/Super Class): The existing class that contains common data and functions.
+•	Child Class (Subclass): The new class that inherits, extends, or alters the behavior of the parent class.
+----------------------------------------------------
+2. The Four Key Inheritance Patterns
+------------------------------------
+Pattern A: Basic Inheritance (Direct Reuse)
+•	What it does: The child class takes everything from the parent exactly as it is without modifying anything.
+•	When to use: When a subclass is a specific type of the parent class but doesn't require unique logic yet.
+•	Syntax Element: Use pass if the child class doesn't add any new code.
+
+
+Pattern B: Method Overriding (Replacing Behavior)
+•	What it does: The child class redefines a method with the exact same name as a method in the parent class, completely replacing the parent's default behavior.
+•	When to use: When the child class needs to perform the same action but in a completely different way (e.g., Dog sounds different than a generic Animal).
+
+
+Pattern C: Method Extending (Adding onto Behavior)
+•	What it does: The child class keeps the parent's original functionality but appends new actions or data to it.
+•	Key Tool: super() – A built-in function used to access and run methods from the parent class.
+•	When to use: When you want to calculate a base value using the parent's logic first, then add specific child-level rules (like adding tax or a specific bonus) right after.
+
+
+
+Pattern D: Multiple Inheritance (Combining Skills)
+•	What it does: A single child class inherits directly from two or more independent parent classes.
+•	When to use: When an object belongs to multiple distinct categories at once and needs features from all of them (e.g., an Amphibian needs features from both a Walker and a Swimmer).
+-----------------------------------------------
+
+3. Why Use Inheritance? (The Benefits)
+------------------------
+1.	Code Reuse (DRY Principle): Write code once in the parent class; use it infinitely across dozens of child classes. Prevents "Don't Repeat Yourself" violations.
+2.	Organization: Creates a clear, natural hierarchy that makes large codebases easier to read and map out.
+3.	Maintainability: If a bug occurs in a shared system feature, you only need to fix it once inside the parent class to fix it everywhere.
+Would you like to review how to apply any of these notes back to our original Employee or Company setup, or do you have a specific question about one of these patterns?
+
+
+
+
+}
 
 
 
