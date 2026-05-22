@@ -3544,6 +3544,65 @@ for item in standard_list:
 --------------------------------------------------------------------------------------------------------------
 
 
+What is Name Mangling and How Does it Work? (Understanding Inheritance and Polymorphism)
+-------------------------------------------
+
+1. Access Conventions in Python
+-------------------------------
+
+Unlike other languages (like Java or C++), Python does not have true "private" restrictions. Instead, it relies on naming conventions to signal how data should be handled.
+•	Single Underscore (_variable): * Meaning: Protected / Internal use only.
+o	Enforcement: It is a gentle agreement (convention) among developers. Python will still allow you to access it from outside the class, but you should avoid doing so.
+•	Double Underscore (__variable): * Meaning: Strictly internal to the class.
+o	Enforcement: Triggers the Name Mangling process to prevent direct external access.
+
+------------------------------------------
+
+2. What is Name Mangling?
+-------------------------
+When you prefix a class attribute with a double underscore (__), Python automatically and silently renames that variable behind the scenes.
+
+Naming Transformation Formula:
+
+__attribute ->_ClassName__attribute
+
+Example:
+
+If you create an attribute named __private inside a class called Example, Python saves it inside the object's memory dictionary (__dict__) as:
+
+_Example__private
+
+The Backdoor Rule:
+
+Because Python only renames the variable instead of locking it away completely, you can still access a double-underscore attribute from outside the class by explicitly writing out its mangled name:
+
+Example Code
+
+print(obj._Example__private)  # This works!
+
+-----------------------------------------------
+
+3. The Real Purpose of Name Mangling
+------------------------------------
+The primary reason for name mangling is NOT security. The goal is to prevent Accidental Attribute Overriding during Inheritance.
+The Problem (Without Double Underscores):
+If both a Parent and a Child class use a generic variable name like self.data, the Child class will accidentally overwrite the Parent's data when super().__init__() is called.
+
+The Solution (With Name Mangling):
+
+By using self.__data, Python saves the parent's data as _Parent__data and the child's data as _Child__data. Both attributes safely coexist in the same object without conflicting or destroying each other.
+
+-----------------------------------------------
+
+4. Summary: When to Use Which?
+-------------------------------
+
+Prefix   	|Common Name	        |Best Used For
+
+_attribute	|Protected / Internal	|General variables and helper methods that you want to hide from general outside use, but are safe to be inherited by subclasses.
+__attribute	|Mangled / Private	|Core class variables that must remain intact, especially if you expect other developers to inherit from your class and potentially use the same variable names.
+
+
 
 
 
